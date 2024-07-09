@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-toronto-time-app
+spec:
+  selector:
+    app: python-toronto-time-app
+  ports:
+    - protocol: TCP
+      port: 3030
+      targetPort: 3030
+      nodePort: 30030  # Choose a port within the range 30000-32767
+  type: NodePort

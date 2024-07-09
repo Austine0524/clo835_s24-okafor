@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-toronto-time-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-toronto-time-app
+  template:
+    metadata:
+      labels:
+        app: python-toronto-time-app
+    spec:
+      containers:
+      - name: python-toronto-time-app
+        image: <your-dockerhub-username>/python-toronto-time-app
+        ports:
+        - containerPort: 8080
